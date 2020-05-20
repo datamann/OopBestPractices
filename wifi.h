@@ -1,8 +1,8 @@
 #include <WiFi.h>
 
 // WIFI
-//char ssid[]           = "YOUR_SSID";    // -> credentials.h
-//const char* password  = "***********";  // -> credentials.h
+char ssid[]           = "**********";
+const char* password  = "**********";
 
 void init_Wifi() {
 

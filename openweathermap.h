@@ -17,5 +17,6 @@ class OpenWeatherMap {
     const char* getWindDirection(int deg);
     bool inRange(float val, float minimum, float maximum);
     char* _servername = "api.openweathermap.org";
+    WeatherData *wd;
 };
 #endif

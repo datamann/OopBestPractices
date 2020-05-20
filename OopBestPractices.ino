@@ -1,20 +1,16 @@
-/*
-    Written by Stig B. Sivertsen
-    sbsivertsen@gmail.com
-    https://github.com/datamann/GA-weather-station
-    14.05.2020
-    @see The GNU Public License (GPL) Version 3
-*/
 #include <SPI.h>
 #define DEBUG
-#include "credentials.h"
 #include "openweathermap.h"
 #include "wifi.h"
 
-OpenWeatherMap owpIlagan;
-OpenWeatherMap owpDrammen;
-WeatherData ilg;
-WeatherData drm;
+// OPENWEATHER API CONFIGURATION
+String apikey = "********************************";
+
+OpenWeatherMap owp;
+OpenWeatherMap owp1;
+
+WeatherData Ilagan;
+WeatherData Drammen;
 
 void setup() {
 
@@ -34,64 +30,64 @@ void setup() {
     Serial.println(WiFi.localIP().toString());
   #endif
 
-  ilg = owpIlagan.fetchWeatherData("1711146", apikey);
-  drm = owpIlagan.fetchWeatherData("3159016", apikey);
+  Ilagan = owp.fetchWeatherData("1711146", apikey);
+  Drammen = owp1.fetchWeatherData("3159016", apikey);
 
   Serial.print(F("Location: "));
-  Serial.println(ilg.getLocation());
+  Serial.println(Ilagan.getLocation());
   Serial.print(F("Temperature: "));
-  Serial.println(ilg.getTemperature());
+  Serial.println(Ilagan.getTemperature());
   Serial.print(F("Feels like: "));
-  Serial.println(ilg.getFeelslike());
+  Serial.println(Ilagan.getFeelslike());
   Serial.print(F("Temp min: "));
-  Serial.println(ilg.getTemp_min());
+  Serial.println(Ilagan.getTemp_min());
   Serial.print(F("Temp max: "));
-  Serial.println(ilg.getTemp_max());
+  Serial.println(Ilagan.getTemp_max());
   Serial.print(F("Pressure: "));
-  Serial.println(ilg.getPressure());
+  Serial.println(Ilagan.getPressure());
   Serial.print(F("Humidity: "));
-  Serial.println(ilg.getHumidity());
+  Serial.println(Ilagan.getHumidity());
   Serial.print(F("Weather: "));
-  Serial.println(ilg.getWeather());
+  Serial.println(Ilagan.getWeather());
   Serial.print(F("Description: "));
-  Serial.println(ilg.getDescription());
+  Serial.println(Ilagan.getDescription());
   Serial.print(F("Wind speed: "));
-  Serial.println(ilg.getWindspeed());
+  Serial.println(Ilagan.getWindspeed());
   Serial.print(F("Wind direction: "));
-  Serial.println(ilg.getWinddirection());
+  Serial.println(Ilagan.getWinddirection());
   Serial.print(F("Wind compass direction: "));
-  Serial.println(ilg.getWindcompassdirection());
+  Serial.println(Ilagan.getWindcompassdirection());
   Serial.print(F("Weather ID: "));
-  Serial.println(ilg.getWeatherid());
+  Serial.println(Ilagan.getWeatherid());
 
   Serial.println(F(" "));
 
   Serial.print(F("Location: "));
-  Serial.println(drm.getLocation());
+  Serial.println(Drammen.getLocation());
   Serial.print(F("Temperature: "));
-  Serial.println(drm.getTemperature());
+  Serial.println(Drammen.getTemperature());
   Serial.print(F("Feels like: "));
-  Serial.println(drm.getFeelslike());
+  Serial.println(Drammen.getFeelslike());
   Serial.print(F("Temp min: "));
-  Serial.println(drm.getTemp_min());
+  Serial.println(Drammen.getTemp_min());
   Serial.print(F("Temp max: "));
-  Serial.println(drm.getTemp_max());
+  Serial.println(Drammen.getTemp_max());
   Serial.print(F("Pressure: "));
-  Serial.println(drm.getPressure());
+  Serial.println(Drammen.getPressure());
   Serial.print(F("Humidity: "));
-  Serial.println(drm.getHumidity());
+  Serial.println(Drammen.getHumidity());
   Serial.print(F("Weather: "));
-  Serial.println(drm.getWeather());
+  Serial.println(Drammen.getWeather());
   Serial.print(F("Description: "));
-  Serial.println(drm.getDescription());
+  Serial.println(Drammen.getDescription());
   Serial.print(F("Wind speed: "));
-  Serial.println(drm.getWindspeed());
+  Serial.println(Drammen.getWindspeed());
   Serial.print(F("Wind direction: "));
-  Serial.println(drm.getWinddirection());
+  Serial.println(Drammen.getWinddirection());
   Serial.print(F("Wind compass direction: "));
-  Serial.println(drm.getWindcompassdirection());
+  Serial.println(Drammen.getWindcompassdirection());
   Serial.print(F("Weather ID: "));
-  Serial.println(drm.getWeatherid());
+  Serial.println(Drammen.getWeatherid());
 }
 
 void loop() {
