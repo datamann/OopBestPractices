@@ -115,59 +115,6 @@ WeatherData OpenWeatherMap::fetchWeatherData(String cityid, String apikey)
     Serial.print(F("Weather ID: "));
     Serial.println(wd->getWeatherid());
     Serial.println(F(" "));
-    
-    /*const char* location = doc["city"]["name"];
-    wd.setLocation(location);
-    float temperature = doc["list"]["main"]["temp"];
-    wd.setTemperature(temperature);
-    float feelsLike = doc["list"]["main"]["feels_like"];
-    wd.setFeelslike(feelsLike);
-    float temp_min = doc["list"]["main"]["temp_min"];
-    wd.setTemp_min(temp_min);
-    float temp_max = doc["list"]["main"]["temp_max"];
-    wd.setTemp_max(temp_max);
-    int pressure = doc["list"]["main"]["pressure"];
-    wd.setPressure(pressure);
-    int humidity = doc["list"]["main"]["humidity"];
-    wd.setHumidity(humidity);
-    const char* weather = doc["list"]["weather"]["main"];
-    wd.setWeather(weather);
-    const char* description = doc["list"]["weather"]["description"];
-    wd.setDescription(description);
-    float windSpeed = doc["list"]["wind"]["speed"];
-    wd.setWindspeed(windSpeed);
-    int windDirection = doc["list"]["wind"]["deg"];
-    wd.setWinddirection(windDirection);
-    wd.setWindcompassdirection(getWindDirection(wd.getWinddirection()));
-    int weatherID = doc["list"]["weather"]["id"];
-    wd.setWeatherid(weatherID);*/
-
-    /*Serial.print(F("Location: "));
-    Serial.println(wd.getLocation());
-    Serial.print(F("Temperature: "));
-    Serial.println(wd.getTemperature());
-    Serial.print(F("Feels like: "));
-    Serial.println(wd.getFeelslike());
-    Serial.print(F("Temp min: "));
-    Serial.println(wd.getTemp_min());
-    Serial.print(F("Temp max: "));
-    Serial.println(wd.getTemp_max());
-    Serial.print(F("Pressure: "));
-    Serial.println(wd.getPressure());
-    Serial.print(F("Humidity: "));
-    Serial.println(wd.getHumidity());
-    Serial.print(F("Weather: "));
-    Serial.println(wd.getWeather());
-    Serial.print(F("Description: "));
-    Serial.println(wd.getDescription());
-    Serial.print(F("Wind speed: "));
-    Serial.println(wd.getWindspeed());
-    Serial.print(F("Wind direction: "));
-    Serial.println(wd.getWinddirection());
-    Serial.print(F("Wind compass direction: "));
-    Serial.println(wd.getWindcompassdirection());
-    Serial.print(F("Weather ID: "));
-    Serial.println(wd.getWeatherid());*/
 
 /*
  * Example JSON
